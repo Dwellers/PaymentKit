@@ -1,14 +1,14 @@
 //
-//  PTKCard.m
-//  PTKPayment Example
+//  PKCard.m
+//  PKPayment Example
 //
 //  Created by Alex MacCaw on 1/31/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
 //
 
-#import "PTKCard.h"
+#import "PKCard.h"
 
-@implementation PTKCard
+@implementation PKCard
 
 - (NSString *)last4
 {

@@ -1,14 +1,14 @@
 //
-//  PTKCardCVC.m
-//  PTKPayment Example
+//  PKCardCVC.m
+//  PKPayment Example
 //
 //  Created by Alex MacCaw on 1/22/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
 //
 
-#import "PTKCardCVC.h"
+#import "PKCardCVC.h"
 
-@implementation PTKCardCVC {
+@implementation PKCardCVC {
 @private
     NSString *_cvc;
 }
@@ -44,9 +44,9 @@
     return _cvc.length >= 3 && _cvc.length <= 4;
 }
 
-- (BOOL)isValidWithType:(PTKCardType)type
+- (BOOL)isValidWithType:(PKCardType)type
 {
-    if (type == PTKCardTypeAmex) {
+    if (type == PKCardTypeAmex) {
         return _cvc.length == 4;
     } else {
         return _cvc.length == 3;
@@ -58,9 +58,9 @@
     return _cvc.length <= 4;
 }
 
-- (BOOL)isPartiallyValidWithType:(PTKCardType)type
+- (BOOL)isPartiallyValidWithType:(PKCardType)type
 {
-    if (type == PTKCardTypeAmex) {
+    if (type == PKCardTypeAmex) {
         return _cvc.length <= 4;
     } else {
         return _cvc.length <= 3;

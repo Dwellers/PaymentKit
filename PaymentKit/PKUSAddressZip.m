@@ -1,14 +1,14 @@
 //
-//  PTKUSAddressZip.m
+//  PKUSAddressZip.m
 //  PaymentKit Example
 //
 //  Created by Alex MacCaw on 2/17/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
 //
 
-#import "PTKUSAddressZip.h"
+#import "PKUSAddressZip.h"
 
-@implementation PTKUSAddressZip
+@implementation PKUSAddressZip
 
 - (id)initWithString:(NSString *)string
 {

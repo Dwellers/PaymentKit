@@ -1,18 +1,18 @@
 //
 //  CardNumber.h
-//  PTKPayment Example
+//  PKPayment Example
 //
 //  Created by Alex MacCaw on 1/22/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "PTKCardType.h"
-#import "PTKComponent.h"
+#import "PKCardType.h"
+#import "PKComponent.h"
 
-@interface PTKCardNumber : PTKComponent
+@interface PKCardNumber : PKComponent
 
-@property (nonatomic, readonly) PTKCardType cardType;
+@property (nonatomic, readonly) PKCardType cardType;
 @property (nonatomic, readonly) NSString *last4;
 @property (nonatomic, readonly) NSString *lastGroup;
 @property (nonatomic, readonly) NSString *string;

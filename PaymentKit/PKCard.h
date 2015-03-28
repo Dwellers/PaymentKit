@@ -1,6 +1,6 @@
 //
-//  PTKCard.h
-//  PTKPayment Example
+//  PKCard.h
+//  PKPayment Example
 //
 //  Created by Alex MacCaw on 1/31/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PTKCard : NSObject
+@interface PKCard : NSObject
 
 @property (nonatomic, copy) NSString *number;
 @property (nonatomic, copy) NSString *cvc;

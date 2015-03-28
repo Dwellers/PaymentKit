@@ -1,14 +1,14 @@
 //
-//  PTKComponent.m
+//  PKComponent.m
 //  Stripe
 //
 //  Created by Phil Cohen on 12/18/13.
 //
 //
 
-#import "PTKComponent.h"
+#import "PKComponent.h"
 
-@implementation PTKComponent
+@implementation PKComponent
 
 - (id)initWithString:(NSString *)string
 {

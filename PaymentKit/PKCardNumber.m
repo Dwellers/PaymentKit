@@ -1,14 +1,14 @@
 //
 //  CardNumber.m
-//  PTKPayment Example
+//  PKPayment Example
 //
 //  Created by Alex MacCaw on 1/22/13.
 //  Copyright (c) 2013 Stripe. All rights reserved.
 //
 
-#import "PTKCardNumber.h"
+#import "PKCardNumber.h"
 
-@implementation PTKCardNumber {
+@implementation PKCardNumber {
 @private
     NSString *_number;
 }
@@ -30,29 +30,29 @@
     return self;
 }
 
-- (PTKCardType)cardType
+- (PKCardType)cardType
 {
     if (_number.length < 2) {
-        return PTKCardTypeUnknown;
+        return PKCardTypeUnknown;
     }
 
     NSString *firstChars = [_number substringWithRange:NSMakeRange(0, 2)];
     NSInteger range = [firstChars integerValue];
 
     if (range >= 40 && range <= 49) {
-        return PTKCardTypeVisa;
+        return PKCardTypeVisa;
     } else if (range >= 50 && range <= 59) {
-        return PTKCardTypeMasterCard;
+        return PKCardTypeMasterCard;
     } else if (range == 34 || range == 37) {
-        return PTKCardTypeAmex;
+        return PKCardTypeAmex;
     } else if (range == 60 || range == 62 || range == 64 || range == 65) {
-        return PTKCardTypeDiscover;
+        return PKCardTypeDiscover;
     } else if (range == 35) {
-        return PTKCardTypeJCB;
+        return PKCardTypeJCB;
     } else if (range == 30 || range == 36 || range == 38 || range == 39) {
-        return PTKCardTypeDinersClub;
+        return PKCardTypeDinersClub;
     } else {
-        return PTKCardTypeUnknown;
+        return PKCardTypeUnknown;
     }
 }
 
@@ -67,7 +67,7 @@
 
 - (NSString *)lastGroup
 {
-    if (self.cardType == PTKCardTypeAmex) {
+    if (self.cardType == PKCardTypeAmex) {
         if (_number.length >= 5) {
             return [_number substringFromIndex:([_number length] - 5)];
         }
@@ -90,7 +90,7 @@
 {
     NSRegularExpression *regex;
 
-    if (self.cardType == PTKCardTypeAmex) {
+    if (self.cardType == PKCardTypeAmex) {
         regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,4})(\\d{1,6})?(\\d{1,5})?" options:0 error:NULL];
     } else {
         regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,4})" options:0 error:NULL];
@@ -123,7 +123,7 @@
         return string;
     }
 
-    if (self.cardType == PTKCardTypeAmex) {
+    if (self.cardType == PKCardTypeAmex) {
         regex = [NSRegularExpression regularExpressionWithPattern:@"^(\\d{4}|\\d{4}\\s\\d{6})$" options:0 error:NULL];
     } else {
         regex = [NSRegularExpression regularExpressionWithPattern:@"(?:^|\\s)(\\d{4})$" options:0 error:NULL];
@@ -176,11 +176,11 @@
 
 - (NSInteger)lengthForCardType
 {
-    PTKCardType type = self.cardType;
+    PKCardType type = self.cardType;
     NSInteger length;
-    if (type == PTKCardTypeAmex) {
+    if (type == PKCardTypeAmex) {
         length = 15;
-    } else if (type == PTKCardTypeDinersClub) {
+    } else if (type == PKCardTypeDinersClub) {
         length = 14;
     } else {
         length = 16;
