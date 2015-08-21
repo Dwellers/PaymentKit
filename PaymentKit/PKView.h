@@ -26,6 +26,7 @@
 
 - (BOOL)isValid;
 
+@property (nonatomic, strong) UIFont *font;
 @property (nonatomic, readonly) UIView *opaqueOverGradientView;
 @property (nonatomic, readonly) PKCardNumber *cardNumber;
 @property (nonatomic, readonly) PKCardExpiry *cardExpiry;
